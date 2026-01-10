@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+.nav-link {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #ff8c00 !important; /* Orange color on hover */
+    transform: scale(1.05); /* Aliati thulo hune */
+}
+.effect {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.effect:hover {
+    color: #ff8c00 !important; /* Orange color on hover */
+    transform: scale(1.05); /* Aliati thulo hune */
+}
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
