@@ -2,10 +2,15 @@ import React from 'react'
 import logo from '../assets/pasal_logoo.png';
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, Route, Routes } from 'react-router-dom';
-import Category from '../Pages/Category';
+import { useStore } from './ProductStore'; // Mathi import gara
+
+
 
 
 function Header() {
+    
+    const user = localStorage.getItem('user');
+    const { myCart } = useStore();
     return (
         <>
             <header className="main-header">
@@ -17,20 +22,32 @@ function Header() {
                             {/* Logo Section - Mobile ma Left ma, Desktop ma auto */}
                             <div className="col-6 col-lg-auto">
                                 <Link to="/">
-                                <img  style={{ width: "80px", height: "auto" }} src={logo} alt="Logo" />
+                                    <img style={{ width: "80px", height: "auto" }} src={logo} alt="Logo" />
                                 </Link>
                             </div>
 
                             {/* Right Side Icons - Mobile ma Right ma, Desktop ma last ma */}
                             <div className="col-6 col-lg-auto order-lg-3 ms-auto d-flex justify-content-end align-items-center gap-2 ">
                                 <div className="lh-1 text-end effect">
-                                    <small className="text-secondary d-block" style={{ fontSize: '11px' }}>Hello!</small>
-                                    <span className="fw-bold" style={{ fontSize: '13px' }}>Sign In</span>
+                                    {user ? (
+                                        // User login chha bhane usko naam dekhau
+                                        <>
+                                            <small className="text-secondary d-block" style={{ fontSize: '11px' }}>Hello!</small>
+                                            <span className="fw-bold text-capitalize" style={{ fontSize: '13px' }}>{user}</span>
+                                        </>
+                                    ) : (
+                                        // Login chhaina bhane Sign In link dekhau
+                                        <Link to="/login" className="text-decoration-none text-dark">
+                                            <small className="text-secondary d-block" style={{ fontSize: '11px' }}>Hello!</small>
+                                            <span className="fw-bold" style={{ fontSize: '13px' }}>Sign In</span>
+                                        </Link>
+                                    )}
                                 </div>
-                                <div className="d-flex align-items-center effect">
+                                <Link to="/cart" className="d-flex align-items-center effect">
                                     <FaShoppingCart size={26} style={{ color: '#232f3e' }} />
+                                    <span className="badge bg-danger rounded-pill ms-1">{myCart.length}</span>
                                     <span className="fw-bold ms-1" style={{ fontSize: '14px' }}>Cart</span>
-                                </div>
+                                </Link>
                             </div>
 
                             {/* Search Bar - Mobile ma full width (2nd line), Desktop ma bich ma (1st line) */}
@@ -41,10 +58,10 @@ function Header() {
                                     </button>
                                     <ul className="dropdown-menu shadow-sm">
                                         <Link to="/coming-soon">
-                                        <li><a className="dropdown-item" href="#">Best Sellers</a></li>
+                                            <li><a className="dropdown-item" href="#">Best Sellers</a></li>
                                         </Link>
                                         <Link to="/coming-soon">
-                                        <li><a className="dropdown-item" href="#">New Arrivals</a></li>
+                                            <li><a className="dropdown-item" href="#">New Arrivals</a></li>
                                         </Link>
                                     </ul>
                                     <input type="text" className='form-control border' placeholder='Search products...' />
@@ -67,14 +84,14 @@ function Header() {
                         {/* Categories Menu - Mobile ma click garda center ma aaune */}
                         <div className="collapse navbar-collapse" id="subNavbarContent">
                             <ul className="navbar-nav mx-auto text-center w-100 justify-content-center">
-                               <li className="nav-item d-flex align-items-center">
+                                <li className="nav-item d-flex align-items-center">
                                     <Link className="nav-link active text-white audiowide-regular px-2" to="/">Home</Link>
                                     {/* Thado line: mx-lg-3 le left ra right dubai tira barabar gap dincha */}
                                     <span className="d-none d-lg-block mx-lg-3"
                                         style={{ borderLeft: '1px solid rgba(255,255,255,0.3)', height: '20px' }}>
                                     </span>
                                 </li>
-                               {/* --- Electronics --- */}
+                                {/* --- Electronics --- */}
                                 {/* --- Electronics --- */}
                                 <li className="nav-item d-flex align-items-center">
                                     <Link className="nav-link active text-white audiowide-regular px-2" to="/category/electronics">Electronics</Link>
@@ -112,7 +129,7 @@ function Header() {
                 </nav>
             </header>
 
-            
+
         </>
     )
 }

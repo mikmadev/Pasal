@@ -44,10 +44,7 @@ function Category() {
 
                                     <div className="mt-2">
                                         {/* Primary Color Add to Cart Button */}
-                                        <button className="btn btn-sm w-100 fw-bold mb-2 text-white shadow-sm"
-                                            style={{ backgroundColor: '#202C3C' }}>
-                                            <i className="bi bi-cart-plus me-1"></i> Add to Cart
-                                        </button>
+                                       
 
                                         {/* View Details Link with dynamic ID */}
                                         <Link to={`/product/${item.id}`}

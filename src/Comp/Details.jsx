@@ -1,8 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { myProducts } from '../Comp/Data' // Path check gara hai bro
+import { useStore } from '../Comp/ProductStore'; // Path check gara hai
 
 function Details() {
+    const { addSaman } = useStore();
     // 1. URL bata 'id' variable nikalne
     const { id } = useParams()
 
@@ -31,7 +33,7 @@ function Details() {
 
                 {/* Right side: Product Info */}
                 <div className="col-md-6">
-                    <h5 className="text-uppercase text-muted">{product.category}</h5>
+                    {/* <h5 className="text-uppercase text-muted">{product.category}</h5> */}
                     <h2 className="display-5 fw-bold">{product.title}</h2>
                     
                     <div className="d-flex align-items-center my-3">
@@ -46,7 +48,7 @@ function Details() {
                     </p>
 
                     <div className="mt-4">
-                        <button className="btn btn-dark btn-lg px-4 me-3">Add to Cart</button>
+                        <button onClick={() => addSaman(product)} className="btn btn-dark btn-lg px-4 me-3">Add to Cart</button>
                         <button className="btn btn-outline-dark btn-lg px-4">Buy Now</button>
                     </div>
                 </div>

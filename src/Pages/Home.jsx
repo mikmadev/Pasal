@@ -69,9 +69,7 @@ function Home() {
                                                 <h6 className="card-title text-truncate fw-bold" style={{ color: '#202C3C' }}>{item.title}</h6>
                                                 <p className="fw-bold fs-5" style={{ color: '#202C3C' }}>Rs. {item.price}</p>
 
-                                                <button className="btn btn-sm w-100 fw-bold mb-2 text-white" style={{ backgroundColor: '#202C3C' }}>
-                                                    Add to Cart
-                                                </button>
+                                                
 
                                                 <Link to={`/product/${item.id}`} className="btn btn-outline-dark btn-sm w-100 fw-bold">
                                                     View Details
@@ -105,9 +103,7 @@ function Home() {
 
                                             <div className="mt-2">
                                                 {/* Primary Color Button (#202C3C) */}
-                                                <button className="btn btn-sm w-100 fw-bold mb-2 text-white shadow-sm" style={{ backgroundColor: '#202C3C' }}>
-                                                    <i className="bi bi-cart-plus me-1"></i> Add to Cart
-                                                </button>
+                                               
 
                                                 {/* Modern View Details Link with Dynamic ID */}
                                                 <Link
@@ -147,9 +143,7 @@ function Home() {
 
                                             <div className="mt-2">
                                                 {/* Add to Cart Button with Primary Color #202C3C */}
-                                                <button className="btn btn-sm w-100 fw-bold mb-2 text-white shadow-sm" style={{ backgroundColor: '#202C3C' }}>
-                                                    <i className="bi bi-cart-plus me-1"></i> Add to Cart
-                                                </button>
+                                               
 
                                                 {/* View Details Link with Dynamic ID */}
                                                 <Link
@@ -188,9 +182,7 @@ function Home() {
 
                                             <div className="mt-2">
                                                 {/* Add to Cart Button with Primary Color */}
-                                                <button className="btn btn-sm w-100 fw-bold mb-2 text-white shadow-sm" style={{ backgroundColor: '#202C3C' }}>
-                                                    <i className="bi bi-cart-plus me-1"></i> Add to Cart
-                                                </button>
+                                                
 
                                                 {/* Modern View Details Link */}
                                                 <Link

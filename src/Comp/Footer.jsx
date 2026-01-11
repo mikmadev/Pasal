@@ -14,7 +14,7 @@ function Footer() {
 
                             <Link to="/coming-soon" style={{ textDecoration: 'none', color: 'White' }} href="">Careers</Link>
                             <Link to="/coming-soon" style={{ textDecoration: 'none', color: 'White' }} href="">Blog</Link>
-                            <a className='text-white ' style={{ textDecoration: 'none' }} href="">About Us</a>
+                            <Link to="/coming-soon" style={{ textDecoration: 'none',  color: 'White' }} >About Us</Link>
                         </div>
                         <div className="col-lg-3 d-flex flex-column mt-5">
                             <h6 className='text-white '>Make Money with Us</h6>
