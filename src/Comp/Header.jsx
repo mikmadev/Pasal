@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../assets/pasal_logoo.png';
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, Route, Routes } from 'react-router-dom';
-import { useStore } from './ProductStore'; // Mathi import gara
+import { useStore } from './ProductStore'; 
 
 
 
@@ -14,19 +14,19 @@ function Header() {
     return (
         <>
             <header className="main-header">
-                {/* --- SECTION 1: TOP HEADER (LOGO, SEARCH, CART) --- */}
+               
                 <section className='bg-white border-bottom'>
                     <div className="container-fluid px-lg-4">
                         <div className="row align-items-center g-1">
 
-                            {/* Logo Section - Mobile ma Left ma, Desktop ma auto */}
+                            
                             <div className="col-6 col-lg-auto">
                                 <Link to="/">
                                     <img style={{ width: "80px", height: "auto" }} src={logo} alt="Logo" />
                                 </Link>
                             </div>
 
-                            {/* Right Side Icons - Mobile ma Right ma, Desktop ma last ma */}
+                            
                             <div className="col-6 col-lg-auto order-lg-3 ms-auto d-flex justify-content-end align-items-center gap-2 ">
                                 <div className="lh-1 text-end effect">
                                     {user ? (
@@ -86,7 +86,7 @@ function Header() {
                             <ul className="navbar-nav mx-auto text-center w-100 justify-content-center">
                                 <li className="nav-item d-flex align-items-center">
                                     <Link className="nav-link active text-white audiowide-regular px-2" to="/">Home</Link>
-                                    {/* Thado line: mx-lg-3 le left ra right dubai tira barabar gap dincha */}
+                                    
                                     <span className="d-none d-lg-block mx-lg-3"
                                         style={{ borderLeft: '1px solid rgba(255,255,255,0.3)', height: '20px' }}>
                                     </span>
@@ -95,7 +95,7 @@ function Header() {
                                 {/* --- Electronics --- */}
                                 <li className="nav-item d-flex align-items-center">
                                     <Link className="nav-link active text-white audiowide-regular px-2" to="/category/electronics">Electronics</Link>
-                                    {/* Thado line: mx-lg-3 le left ra right dubai tira barabar gap dincha */}
+                                    
                                     <span className="d-none d-lg-block mx-lg-3"
                                         style={{ borderLeft: '1px solid rgba(255,255,255,0.3)', height: '20px' }}>
                                     </span>
