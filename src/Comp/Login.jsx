@@ -2,41 +2,50 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    const [name, setName] = useState('');
+    
+    const [meroName, setMeroName] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    
+    const meroLogin = (e) => {
         e.preventDefault();
-        if (name.trim()) {
-            // Memory ma user save garne
-            localStorage.setItem('user', name);
-            // Home page ma pathaune
-            navigate('/');
-            // Header refresh garna ko lagi
+        
+       
+        if (meroName === "") {
+            alert("Please enter your name!");
+        } else {
+            
+            localStorage.setItem('user', meroName);
+             navigate('/');
             window.location.reload(); 
         }
     };
 
     return (
-        <div className="container py-5 d-flex justify-content-center">
-            <div className="card p-4 shadow-sm" style={{ maxWidth: '400px', width: '100%', borderRadius: '15px' }}>
-                <h2 className="text-center fw-bold mb-4" style={{ color: '#202C3C' }}>Sign In</h2>
-                <form onSubmit={handleLogin}>
-                    <div className="mb-3">
-                        <label className="form-label fw-bold">Your Name</label>
-                        <input 
-                            type="text" 
-                            className="form-control" 
-                            placeholder="Enter your name to login"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required 
-                        />
+        <div className="container py-5">
+            <div className="row justify-content-center">
+                <div className="col-md-4">
+                    <div className="card shadow p-4 border-0 mt-5">
+                        <h2 className="text-center mb-4">Login Form</h2>
+                        
+                        <form onSubmit={meroLogin}>
+                            <div className="mb-3">
+                                <label className="form-label">Tapaiko Naam:</label>
+                                <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    placeholder="Enter Name..."
+                                    value={meroName}
+                                    onChange={(e) => setMeroName(e.target.value)}
+                                />
+                            </div>
+                            
+                            <button type="submit" className="btn btn-primary w-100">
+                                Login
+                            </button>
+                        </form>
                     </div>
-                    <button type="submit" className="btn btn-dark w-100 py-2 fw-bold" style={{ backgroundColor: '#202C3C' }}>
-                        Login
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
     );

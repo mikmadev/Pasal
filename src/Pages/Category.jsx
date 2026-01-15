@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom'
 function Category() {
     const { catName } = useParams()
 
-    // Filter garda dubai lai sano letter ma lagera check garne
+    
     const filteredData = myProducts.filter(item =>
         item.category.toLowerCase() === catName.toLowerCase()
     )
 
     return (
         <div className="container mt-5">
-            {/* Heading with primary color and border accent */}
+            
             <h2 className="fw-bold mb-4 text-uppercase py-2"
                 style={{ color: '#202C3C', borderBottom: '3px solid #202C3C', display: 'inline-block' }}>
                 {catName}
@@ -43,10 +43,7 @@ function Category() {
                                     </div>
 
                                     <div className="mt-2">
-                                        {/* Primary Color Add to Cart Button */}
                                        
-
-                                        {/* View Details Link with dynamic ID */}
                                         <Link to={`/product/${item.id}`}
                                             className="btn btn-outline-dark btn-sm w-100 fw-bold"
                                             style={{ borderColor: '#202C3C', color: '#202C3C' }}>

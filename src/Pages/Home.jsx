@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import { myProducts } from '../Comp/Data';
 import { Link } from 'react-router-dom';
 
@@ -19,15 +19,15 @@ function Home() {
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={0}
-                        loop={true} // Repeat huna ko lagi
+                        loop={true} 
                         autoplay={{
-                            delay: 2500, // 2.5 second ma slide ferine
-                            disableOnInteraction: false, // Click garda pani banda nahune
+                            delay: 2500, 
+                            disableOnInteraction: false, 
                         }}
                         pagination={{
                             clickable: true,
                         }}
-                        modules={[Pagination, Autoplay]} // Autoplay module yaha thapio
+                        modules={[Pagination, Autoplay]} 
                         className="mySwiper"
                     >
                         <SwiperSlide>
@@ -54,7 +54,7 @@ function Home() {
                         </h4>
                         <div className="row">
                             {electronicsProducts.slice(0, 4).map((item) => {
-                                return ( // Return huna parcha yedi { } use gareko chau bhane
+                                return ( 
                                     <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={item.id}>
                                         <div className="card h-100 shadow-sm border-0 rounded-3 p-3">
                                             <div className="text-center mb-3">
@@ -102,15 +102,7 @@ function Home() {
                                             </div>
 
                                             <div className="mt-2">
-                                                {/* Primary Color Button (#202C3C) */}
-                                               
-
-                                                {/* Modern View Details Link with Dynamic ID */}
-                                                <Link
-                                                    to={`/product/${item.id}`}
-                                                    className="btn btn-outline-dark btn-sm w-100 fw-bold"
-                                                    style={{ borderColor: '#202C3C', color: '#202C3C' }}
-                                                >
+                                               <Link to={`/product/${item.id}`}className="btn btn-outline-dark btn-sm w-100 fw-bold" style={{ borderColor: '#202C3C', color: '#202C3C' }}>
                                                     View Details
                                                 </Link>
                                             </div>
@@ -137,16 +129,11 @@ function Home() {
                                         <div className="card-body px-0 text-center d-flex flex-column justify-content-between">
                                             <div>
                                                 <h6 className="card-title text-truncate fw-bold" style={{ color: '#202C3C' }}>{item.title}</h6>
-                                                {/* Timro data ma price number ma chha, Rs. ma display garda ramro dekhinchha */}
                                                 <p className="fw-bold fs-5" style={{ color: '#202C3C' }}>Rs. {item.price}</p>
                                             </div>
 
                                             <div className="mt-2">
-                                                {/* Add to Cart Button with Primary Color #202C3C */}
-                                               
-
-                                                {/* View Details Link with Dynamic ID */}
-                                                <Link
+                                               <Link
                                                     to={`/product/${item.id}`}
                                                     className="btn btn-outline-dark btn-sm w-100 fw-bold"
                                                     style={{ borderColor: '#202C3C', color: '#202C3C' }}
@@ -181,10 +168,6 @@ function Home() {
                                             </div>
 
                                             <div className="mt-2">
-                                                {/* Add to Cart Button with Primary Color */}
-                                                
-
-                                                {/* Modern View Details Link */}
                                                 <Link
                                                     to={`/product/${item.id}`}
                                                     className="btn btn-outline-dark btn-sm w-100 fw-bold"
